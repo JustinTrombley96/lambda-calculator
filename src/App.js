@@ -21,11 +21,22 @@ function App() {
     const [displayState, setDisplay] = useState(0)
 
     const changeDisplay = number => {
-      setDisplay(number)
+      if (displayState === 0) {
+        setDisplay(number) 
+      } else {
+      setDisplay(displayState + number)
     }
+  }
     const clearDisplay = () => {
       setDisplay(0)
     }
+    const addDisplay = operator => {
+      if (operator === '=') {
+        setDisplay(eval(displayState))
+      } else {
+      setDisplay(displayState + operator)
+    }
+  }
   return (
     <div className="container">
       <Logo />
@@ -35,7 +46,7 @@ function App() {
         <div className="buttons">
         <Specials clearDisplay={clearDisplay}/>
         <Numbers changeDisplay={changeDisplay}/>
-        <Operators />
+        <Operators addDisplay={addDisplay} />
         
         
         </div>

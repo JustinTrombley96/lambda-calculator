@@ -4,7 +4,7 @@ import React from "react";
         const OperatorButton = props => {
         
         return (
-          <button>{props.operator.char}</button>
+          <button onClick={() => props.addDisplay(props.operator.value)}>{props.operator.char}</button>
         )
       }
 
