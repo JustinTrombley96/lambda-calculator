@@ -23,6 +23,9 @@ function App() {
     const changeDisplay = number => {
       setDisplay(number)
     }
+    const clearDisplay = () => {
+      setDisplay(0)
+    }
   return (
     <div className="container">
       <Logo />
@@ -30,7 +33,7 @@ function App() {
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display displayState={displayState}/>
         <div className="buttons">
-        <Specials/>
+        <Specials clearDisplay={clearDisplay}/>
         <Numbers changeDisplay={changeDisplay}/>
         <Operators />
         
