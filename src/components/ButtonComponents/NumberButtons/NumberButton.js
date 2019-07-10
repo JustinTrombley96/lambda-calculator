@@ -4,7 +4,7 @@ import React from "react";
         const NumberButton = props => {
         
         return (
-          <button>{props.number}</button>
+          <button value={props.number} onClick={() => props.changeDisplay(props.number)}>{props.number}</button>
         )
       }
       export default NumberButton
